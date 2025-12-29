@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivinArinn Interiors | Premium Interior Design Consultancy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --beige: #f9f7f2;
+            --light-beige: #fdfcf9;
+            --charcoal: #1a1a1a;
+            --dark-charcoal: #0d0d0d;
+            --gold: #c5a572;
+            --light-gold: #e2d4bc;
+            --gray: #8c8c8c;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--charcoal);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--charcoal);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--charcoal);
+            border-color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: 1px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            background-color: var(--white);
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: 2px;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            margin-left: 10px;
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 300;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* Hero Section - Inspired by kiahsilver.in */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background-color: var(--beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--charcoal);
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            background-color: var(--light-beige);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--light-gold);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(197, 165, 114, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--beige);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--gray);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-points {
+            margin-top: 40px;
+        }
+
+        .about-point {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .about-point:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--gold);
+        }
+
+        .about-point h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .about-point p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            position: relative;
+            height: 500px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Process Section - How We Work */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 80px;
+            right: -20px;
+            width: 40px;
+            height: 1px;
+            background-color: var(--light-gold);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .process-step p {
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--beige);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--gray);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(197, 165, 114, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--charcoal);
+        }
+
+        .contact-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background-color: var(--light-beige);
+            padding: 50px 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: var(--charcoal);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 100px 0 40px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 300;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 60px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .copyright p {
+            margin-bottom: 10px;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-container, .about-container, .contact-container {
+                gap: 60px;
+            }
+            
+            .process-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                padding: 100px 40px 40px;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .hero-container, .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding-top: 150px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                height: 400px;
+                order: -1;
+            }
+            
+            .about-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">LIVINARINN<span>INTERIORS</span></a>
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="https://wa.me/919353684186" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+   <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <h1 style="font-size: 4.5rem; margin-bottom: 25px; color: var(--charcoal); line-height: 1.1;">Transforming Spaces into Timeless Experiences</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 40px; color: var(--gray); font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Premium interior design consultancy creating stunning, functional spaces that reflect your unique vision and lifestyle.
+            </p>
+            <div class="hero-cta" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                <a href="https://wa.me/919353684186" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Start a Project</a>
+            </div>
+        </div>
+        
+        <!-- Optional: You can add a decorative element instead of an image -->
+        <div style="margin-top: 60px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div style="text-align: center; padding: 20px; max-width: 200px;">
+                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Creative Designs</h4>
+                <p style="font-size: 0.9rem; color: var(--gray);">Unique & innovative concepts</p>
+            </div>
+            
+            <div style="text-align: center; padding: 20px; max-width: 200px;">
+                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Personal Attention</h4>
+                <p style="font-size: 0.9rem; color: var(--gray);">Dedicated to your vision</p>
+            </div>
+            
+            <div style="text-align: center; padding: 20px; max-width: 200px;">
+                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Premium Quality</h4>
+                <p style="font-size: 0.9rem; color: var(--gray);">Exceptional craftsmanship</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Services</h2>
+                <p>Comprehensive interior design consultancy to bring your vision to life</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Space Planning & Design</h3>
+                    <p>Optimizing your space for functionality, flow, and aesthetics through strategic planning and innovative design solutions.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Space optimization analysis</li>
+                        <li><i class="fas fa-check"></i> Functional layout design</li>
+                        <li><i class="fas fa-check"></i> Furniture arrangement planning</li>
+                        <li><i class="fas fa-check"></i> Circulation and flow design</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Technical Design Services</h3>
+                    <p>Precise technical documentation and visualizations to ensure accurate execution of your design vision.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 2D drawings and floor plans</li>
+                        <li><i class="fas fa-check"></i> Detailed elevation drawings</li>
+                        <li><i class="fas fa-check"></i> 3D visualizations and renders</li>
+                        <li><i class="fas fa-check"></i> Immersive walk-throughs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Material & Color Consultation</h3>
+                    <p>Expert guidance in selecting materials, finishes, and colors that align with your aesthetic and functional requirements.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Material selection and sourcing</li>
+                        <li><i class="fas fa-check"></i> Color scheme development</li>
+                        <li><i class="fas fa-check"></i> Finish and texture coordination</li>
+                        <li><i class="fas fa-check"></i> Sustainable material options</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Site Execution & Coordination</h3>
+                    <p>Comprehensive project management and site coordination to ensure flawless execution of your interior design project.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Contractor coordination</li>
+                        <li><i class="fas fa-check"></i> Site supervision</li>
+                        <li><i class="fas fa-check"></i> Quality control</li>
+                        <li><i class="fas fa-check"></i> Project timeline management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-content fade-in">
+                <h2>Innovative Vision & Personal Attention</h2>
+                <p>At LivinArinn Interiors, we believe that exceptional spaces are born from the perfect harmony of visionary design, innovative technology, and meticulous craftsmanship.</p>
+                <p>Our award-winning designers work closely with each client, transforming concepts into stunning realities while respecting budgets and timelines. We pride ourselves on our sustainable approach, carefully selecting eco-friendly materials without compromising on style or quality.</p>
+                <p>Our comprehensive service ensures a seamless experience from consultation to final installation, with personal attention at every step of your design journey.</p>
+                
+                <div class="about-points">
+                    <div class="about-point">
+                        <h4>Sustainable & Stylish</h4>
+                        <p>We select high-quality, eco-friendly materials to deliver beautiful interiors without compromising on durability or environmental responsibility.</p>
+                    </div>
+                    
+                    <div class="about-point">
+                        <h4>Seamless Project Experience</h4>
+                        <p>From initial consultation to final installation, we manage every detail to ensure your project is flawless and exceeds your expectations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image fade-in">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" alt="About LivinArinn Interiors">
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>How We Work</h2>
+                <p>Transforming ideas into timeless spaces through a structured, collaborative process</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-step fade-in">
+                    <span class="step-number">01</span>
+                    <h3>Meet & Discuss</h3>
+                    <p>We begin by understanding your goals, style preferences, and space requirements through detailed consultation.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <span class="step-number">02</span>
+                    <h3>Design & Plan</h3>
+                    <p>Our team creates layouts, selects materials, and develops detailed 3D visualizations of your proposed space.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <span class="step-number">03</span>
+                    <h3>Build & Install</h3>
+                    <p>We coordinate execution with precision, managing every aspect of construction and installation.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <span class="step-number">04</span>
+                    <h3>Handover</h3>
+                    <p>We walk you through the completed project, ensuring every detail meets your expectations before finalizing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Our Portfolio</h2>
+            <p>A glimpse into our transformative interior design projects</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in">
+                <img src="liv.png" alt="Modern Living Room" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Modern Living Room</h3>
+                        <p>Contemporary design with custom furniture and smart lighting integration</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <img src="kitc.jpg" alt="Luxury Kitchen" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Luxury Kitchen</h3>
+                        <p>Premium modular kitchen with integrated appliances and custom storage</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <img src="bed.jpg" alt="Serene Bedroom" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Serene Bedroom</h3>
+                        <p>Calming bedroom design with custom wardrobes and ambient lighting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <img src="living2.png" alt="Contemporary Living Space" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Contemporary Living Space</h3>
+                        <p>Sophisticated living area with elegant furnishings and lighting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <img src="door side .png" alt="Elegant Entrance" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Elegant Entrance</h3>
+                        <p>Stunning entrance design with custom doors and architectural details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item fade-in">
+                <img src="6.png" alt="Modern Kitchen Design" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Modern Kitchen Design</h3>
+                        <p>Clean, functional kitchen with premium finishes and storage solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="https://wa.me/919353684186" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> View More Projects</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info fade-in">
+                <h2>Begin Your Design Journey</h2>
+                <p>Connect with us to discuss your vision and start transforming your space into a reflection of your unique style and personality. Our team is ready to guide you through every step of the design process.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Owner</h4>
+                            <p>RS Sathvik</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91-9353684186</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+91-9353684186</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>livinarinn@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <a href="https://wa.me/919353684186" class="btn btn-whatsapp" target="_blank" style="margin-right: 15px;"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                    <a href="tel:+919353684186" class="btn btn-gold"><i class="fas fa-phone"></i> Call Now</a>
+                </div>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <form id="enquiryForm">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="service" class="form-control" required>
+                            <option value="">Interested Service</option>
+                            <option value="Space Planning">Space Planning</option>
+                            <option value="2D/3D Design">2D/3D Design</option>
+                            <option value="Material Selection">Material Selection</option>
+                            <option value="Complete Interior">Complete Interior Design</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" class="form-control" placeholder="Tell us about your project vision, requirements, and any specific ideas you have..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px;">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">LIVINARINN</a>
+                    <p>Premium interior design consultancy creating timeless, functional spaces that reflect your unique vision. Transforming concepts into stunning realities with innovative design and sustainable practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#services">Space Planning</a></li>
+                        <li><a href="#services">2D/3D Design</a></li>
+                        <li><a href="#services">Material Selection</a></li>
+                        <li><a href="#services">Site Execution</a></li>
+                        <li><a href="#services">Complete Interiors</a></li>
+                        <li><a href="#services">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-user" style="margin-right: 10px; color: var(--gold);"></i> RS Sathvik</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> livinarinn@gmail.com</li>
+                    </ul>
+                    <a href="https://wa.me/919353684186" class="btn btn-gold" style="margin-top: 20px; width: 100%;" target="_blank"><i class="fab fa-whatsapp"></i> Start a Project</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 LivinArinn Interiors. All rights reserved.</p>
+                <p>Crafted with excellence by TATE LAVISH</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919353684186" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '25px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Form submission to WhatsApp
+        const enquiryForm = document.getElementById('enquiryForm');
+        
+        enquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `*New Interior Design Enquiry - LivinArinn Interiors*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Service Interest:* ${service}%0A*Message:* ${message}%0A%0AHi, I am interested in your interior design services. Please contact me.`;
+            
+            const whatsappURL = `https://wa.me/919353684186?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            enquiryForm.reset();
+            
+            // Show success message
+            alert('Thank you! Your enquiry has been submitted. You will be redirected to WhatsApp.');
+        });
+        
+        // Initialize with header scroll effect
+        if (window.scrollY > 100) {
+            header.style.padding = '15px 0';
+            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+        }
+    </script>
+</body>
+</html>
