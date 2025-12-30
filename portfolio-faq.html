@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & FAQ | LivinArinn Interiors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --beige: #f9f7f2;
+            --light-beige: #fdfcf9;
+            --charcoal: #1a1a1a;
+            --dark-charcoal: #0d0d0d;
+            --gold: #c5a572;
+            --light-gold: #e2d4bc;
+            --gray: #8c8c8c;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--charcoal);
+            border-color: var(--charcoal);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--charcoal);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: 1px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            background-color: var(--white);
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: rotate(5deg);
+            box-shadow: 0 5px 15px rgba(197, 165, 114, 0.2);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text div {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: 1.5px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: var(--gold);
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 300;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--gold);
+        }
+
+        /* ============ HERO BACKGROUND ============ */
+        /* Hero Background with Transparency - FIXED IMAGE URLS */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(249, 247, 242, 0.9) 0%, 
+                rgba(249, 247, 242, 0.7) 50%, 
+                rgba(249, 247, 242, 0.95) 100%);
+            z-index: 2;
+        }
+
+        /* Fixed image URLs - using working Unsplash URLs */
+        .hero-image-transparent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.1;
+            z-index: 1;
+            filter: blur(0.5px);
+            animation: backgroundPan 30s infinite alternate ease-in-out;
+        }
+
+        /* Fallback gradient if image fails to load */
+        .hero-image-transparent:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%);
+            z-index: -1;
+        }
+
+        @keyframes backgroundPan {
+            0% {
+                background-position: center 30%;
+                transform: scale(1);
+            }
+            50% {
+                background-position: center 50%;
+                transform: scale(1.02);
+            }
+            100% {
+                background-position: center 70%;
+                transform: scale(1);
+            }
+        }
+
+        /* Add subtle pattern overlay for more texture */
+        .hero-background:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 25% 25%, rgba(197, 165, 114, 0.03) 0%, transparent 55%),
+                            radial-gradient(circle at 75% 75%, rgba(197, 165, 114, 0.03) 0%, transparent 55%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* ============ PORTFOLIO HERO ============ */
+        .portfolio-hero {
+            position: relative;
+            padding-top: 180px;
+            padding-bottom: 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .portfolio-hero h1 {
+            position: relative;
+            z-index: 3;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .portfolio-hero p {
+            position: relative;
+            z-index: 3;
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============ PORTFOLIO SECTION ============ */
+        .portfolio-section {
+            padding: 100px 0;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .portfolio-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 95%, var(--beige) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .portfolio-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .portfolio-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* ============ FOLDER GRID ============ */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .folder-item {
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .folder-item:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+
+        .folder-icon {
+            width: 100%;
+            height: 350px;
+            background-color: var(--light-beige);
+            border: 1px solid var(--light-gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .folder-icon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(197, 165, 114, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .folder-item:hover .folder-icon:before {
+            opacity: 1;
+        }
+
+        .folder-item:hover .folder-icon {
+            box-shadow: var(--shadow-strong);
+            border-color: var(--gold);
+        }
+
+        .folder-icon i {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .folder-item:hover .folder-icon i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .folder-icon h3 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .folder-icon p {
+            color: var(--gray);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .folder-name {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            transition: var(--transition);
+        }
+
+        .folder-item:hover .folder-name {
+            color: var(--gold);
+        }
+
+        .folder-details {
+            text-align: center;
+            margin-top: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .folder-item:hover .folder-details {
+            color: var(--charcoal);
+        }
+
+        /* Folder number badge */
+        .folder-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--gold);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 1rem;
+            opacity: 0;
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: 3;
+        }
+
+        .folder-item:hover .folder-badge {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ============ PROJECT MODAL ============ */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 60px;
+            position: relative;
+            border-radius: 10px;
+            animation: slideUp 0.5s ease-out;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        .close-modal:hover {
+            color: var(--gold);
+            background-color: rgba(197, 165, 114, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light-gold);
+        }
+
+        .modal-header h2 {
+            font-size: 2.8rem;
+            color: var(--charcoal);
+            margin-bottom: 15px;
+        }
+
+        .modal-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .room-item {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        .room-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .room-item:hover .room-img {
+            transform: scale(1.05);
+        }
+
+        .room-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .room-item:hover .room-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .room-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .room-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* ============ FAQ SECTION ============ */
+        .faq-section {
+            background-color: var(--beige);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(197, 165, 114, 0.05) 0%, transparent 50%),
+                            radial-gradient(circle at 90% 80%, rgba(197, 165, 114, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .faq-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .faq-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gold);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: var(--light-beige);
+        }
+
+        .faq-question h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            font-weight: 500;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-answer.active {
+            padding: 0 30px 30px;
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .faq-answer li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .faq-answer li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 100px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 30%, rgba(197, 165, 114, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 300;
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 60px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .copyright p {
+            margin-bottom: 10px;
+        }
+
+        /* ============ FLOATING WHATSAPP ============ */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            }
+            100% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            }
+        }
+
+        .floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 1200px) {
+            .folder-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .footer-container {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                padding: 100px 40px 40px;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image-transparent {
+                background-attachment: scroll;
+                animation: none;
+            }
+            
+            .modal-content {
+                padding: 40px 30px;
+                margin: 20px auto;
+            }
+            
+            .room-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-hero {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .portfolio-section, .faq-section {
+                padding: 70px 0;
+            }
+            
+            .portfolio-header h2, .faq-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .folder-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .folder-icon {
+                height: 300px;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-text div {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text span {
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+            }
+            
+            .hero-image-transparent {
+                opacity: 0.08;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+                margin: 10px auto;
+            }
+            
+            .project-modal {
+                padding: 10px;
+            }
+            
+            .close-modal {
+                top: 10px;
+                right: 10px;
+                font-size: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                padding: 12px 25px;
+            }
+            
+            .logo-text div {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text span {
+                display: none;
+            }
+            
+            .logo-img {
+                margin-right: 10px;
+            }
+            
+            .hero-image-transparent {
+                opacity: 0.05;
+            }
+            
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .faq-answer.active {
+                padding: 0 20px 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .portfolio-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-header h2, .faq-header h2 {
+                font-size: 2rem;
+            }
+            
+            .folder-icon {
+                height: 250px;
+                padding: 30px;
+            }
+            
+            .folder-icon i {
+                font-size: 3rem;
+            }
+            
+            .folder-icon h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ============ IMAGE FALLBACKS ============ */
+        /* If images don't load, these fallbacks will show */
+        .no-image-fallback {
+            position: relative;
+        }
+        
+        .no-image-fallback:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--beige) 0%, var(--light-gold) 100%);
+            z-index: 1;
+        }
+        
+        .no-image-fallback:after {
+            content: '🏠';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--gold);
+            z-index: 2;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+<header id="header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <div class="logo-container">
+                <img src="logo.png" alt="LivinArinn Interiors Logo" class="logo-img">
+                <div class="logo-text">
+                    <div>LIVINARINN</div>
+                    <span>INTERIORS</span>
+                </div>
+            </div>
+        </a>
+        
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-terms.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-cta">
+            <a href="https://wa.me/919353684186" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Portfolio Hero -->
+<section class="portfolio-hero">
+    <div class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="hero-image-transparent portfolio-hero-bg"></div>
+    </div>
+    <div class="container">
+        <h1>Our Portfolio</h1>
+        <p>Explore our collection of transformative interior design projects that showcase our craftsmanship and attention to detail</p>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section" id="portfolio">
+    <div class="container">
+        <div class="portfolio-header">
+            <h2>Featured Projects</h2>
+            <p>Browse through our diverse portfolio of residential and commercial interior designs</p>
+        </div>
+        
+        <div class="folder-grid">
+            <!-- Project 1 -->
+            <div class="folder-item" onclick="openProject('project1')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Adhitya Reddy</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="folder-item" onclick="openProject('project2')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Amit Agarwal Farm House</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="folder-item" onclick="openProject('project3')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Girdharilal Jain</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="folder-item" onclick="openProject('project4')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Girish Gowda</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="folder-item" onclick="openProject('project5')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Karan Daas</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="folder-item" onclick="openProject('project6')">
+                <div class="folder-icon">
+                    <i class="fas fa-folder"></i>
+                    <h3>Rahal Sharma</h3>
+                    <p>Bengaluru</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our interior design services and process</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        <h3>What is the typical timeline for a complete interior design project?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1">
+                        <p>A complete interior design project typically takes 90-120 working days from the date of receiving 60% advance payment. The timeline includes:</p>
+                        <ul>
+                            <li>Design phase: 15-30 days</li>
+                            <li>Material selection: 7-10 days</li>
+                            <li>Production: 45-60 days</li>
+                            <li>Installation: 15-20 days</li>
+                        </ul>
+                        <p>Timelines may vary based on project scale, complexity, and client decision-making speed.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        <h3>What is included in your interior design consultancy services?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2">
+                        <p>Our comprehensive interior design consultancy includes:</p>
+                        <ul>
+                            <li>Space planning and layout design</li>
+                            <li>2D floor plans and elevation drawings</li>
+                            <li>3D visualizations and walk-throughs</li>
+                            <li>Material and color selection guidance</li>
+                            <li>Furniture and fixture selection</li>
+                            <li>Lighting design and planning</li>
+                            <li>Site execution coordination</li>
+                            <li>Vendor coordination and management</li>
+                            <li>Quality control and supervision</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        <h3>What are your payment terms for interior design projects?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3">
+                        <p>We follow a structured payment schedule:</p>
+                        <p><strong>For Woodworks:</strong></p>
+                        <ul>
+                            <li>10% or ₹2,00,000 (whichever is higher) - Booking amount</li>
+                            <li>30% - Pre material selection</li>
+                            <li>30% - Final design sign-off</li>
+                            <li>30% - Before materials are shipped to site</li>
+                        </ul>
+                        <p><strong>For Services:</strong></p>
+                        <ul>
+                            <li>100% advance payment to start service work at site</li>
+                        </ul>
+                        <p>All payments are non-refundable as per our terms and conditions.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(4)">
+                        <h3>Do you work with existing furniture or only provide complete packages?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4">
+                        <p>We offer flexible solutions based on your needs:</p>
+                        <ul>
+                            <li><strong>Complete Packages:</strong> Full interior design including all furniture, fixtures, and accessories</li>
+                            <li><strong>Partial Packages:</strong> Integration of existing furniture with new pieces</li>
+                            <li><strong>Consultation Only:</strong> Design guidance for spaces where you want to use existing furniture</li>
+                            <li><strong>Custom Solutions:</strong> Bespoke furniture designed to work with your existing pieces</li>
+                        </ul>
+                        <p>During our initial consultation, we assess your existing furniture and provide recommendations on what can be incorporated and what might need replacement for a cohesive design.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(5)">
+                        <h3>How do you ensure quality control during the project?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-5">
+                        <p>We maintain stringent quality control through:</p>
+                        <ul>
+                            <li>Regular site visits by our project managers</li>
+                            <li>Quality checks at every stage of production</li>
+                            <li>Using only approved vendors and materials</li>
+                            <li>Detailed inspection before installation</li>
+                            <li>Final quality audit before handover</li>
+                            <li>Photographic documentation of each phase</li>
+                        </ul>
+                        <p>We assign a dedicated project manager to each client who serves as a single point of contact and ensures all quality standards are met.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(6)">
+                        <h3>What happens if there are changes or revisions during the project?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-6">
+                        <p>We understand that changes may be required during the design process:</p>
+                        <ul>
+                            <li><strong>Design Phase:</strong> Up to 4 rounds of revisions are included in our standard package</li>
+                            <li><strong>During Production:</strong> Changes after work has commenced may result in additional costs and extended timelines</li>
+                            <li><strong>Material Changes:</strong> Any change in approved materials will be priced as per current rates</li>
+                            <li><strong>Structural Changes:</strong> Major changes to approved designs may require re-quotation</li>
+                        </ul>
+                        <p>We recommend finalizing all design decisions before production begins to avoid additional costs and delays.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(7)">
+                        <h3>Do you provide post-installation support or warranty?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-7">
+                        <p>Yes, we provide comprehensive post-installation support:</p>
+                        <ul>
+                            <li><strong>Warranty Period:</strong> 1-year warranty on all woodwork and installations</li>
+                            <li><strong>Support:</strong> 60-day free support for any adjustments or minor fixes</li>
+                            <li><strong>Emergency Response:</strong> Priority support for critical issues</li>
+                            <li><strong>Maintenance Guidance:</strong> Detailed care instructions for all materials</li>
+                            <li><strong>Extended Warranty:</strong> Optional extended warranty packages available</li>
+                        </ul>
+                        <p>Our warranty covers manufacturing defects but does not cover damages due to misuse, accidents, or normal wear and tear.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(8)">
+                        <h3>How do I get started with my interior design project?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-8">
+                        <p>Starting your project is simple:</p>
+                        <ol>
+                            <li><strong>Initial Consultation:</strong> Contact us via WhatsApp or phone to schedule a free consultation</li>
+                            <li><strong>Site Visit:</strong> Our team visits your space to understand requirements and take measurements</li>
+                            <li><strong>Design Proposal:</strong> We present initial concepts and a detailed quotation</li>
+                            <li><strong>Booking:</strong> Upon approval, we proceed with the booking formalities</li>
+                            <li><strong>Design Development:</strong> We create detailed designs and 3D visualizations</li>
+                            <li><strong>Execution:</strong> Once designs are approved, we begin production and installation</li>
+                        </ol>
+                        <p>To begin, simply reach out to us via WhatsApp at +91-9353684186 or email at livinarinn@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">LIVINARINN</a>
+                    <p>Premium interior design consultancy creating timeless, functional spaces that reflect your unique vision.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-terms.html">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="about-terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="index.html#services">Space Planning</a></li>
+                        <li><a href="index.html#services">2D/3D Design</a></li>
+                        <li><a href="index.html#services">Material Selection</a></li>
+                        <li><a href="index.html#services">Site Execution</a></li>
+                        <li><a href="index.html#services">Complete Interiors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-user" style="margin-right: 10px; color: var(--gold);"></i> RS Sathvik</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> livinarinn@gmail.com</li>
+                    </ul>
+                    <a href="https://wa.me/919353684186" class="btn btn-gold" style="margin-top: 20px; width: 100%;" target="_blank"><i class="fab fa-whatsapp"></i> Start a Project</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 LivinArinn Interiors. All rights reserved.</p>
+                <p>Crafted with excellence by TATE LAVISH</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Project 1 Modal -->
+    <div class="project-modal" id="project1-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('project1-modal')">&times;</span>
+            <div class="modal-header">
+                <h2>Adhitya Reddy Residence</h2>
+                <p>Bengaluru | Luxury Interior Design</p>
+            </div>
+            
+            <div class="room-grid">
+                <div class="room-item">
+                    <img src="port/Adithya reddy/Living-area/l1.jpg" class="room-img" alt="Living Room">
+                    <div class="room-overlay">
+                        <h3>Living Room</h3>
+                        <p>Contemporary design with custom entertainment unit</p>
+                    </div>
+                </div>
+                
+                <div class="room-item">
+                    <img src="port/Adithya reddy/Kitchen/k1.jpg" class="room-img" alt="Kitchen">
+                    <div class="room-overlay">
+                        <h3>Kitchen</h3>
+                        <p>Modular kitchen with breakfast counter</p>
+                    </div>
+                </div>
+                
+                <div class="room-item">
+                    <img src="port/Adithya reddy/master-bedroom/m1.png" class="room-img" alt="Master Bedroom">
+                    <div class="room-overlay">
+                        <h3>Master Bedroom</h3>
+                        <p>Luxurious suite with walk-in wardrobe</p>
+                    </div>
+                </div>
+                
+                <div class="room-item">
+                    <img src="port/Adithya reddy/Guest-bedroom/g1.jpg" class="room-img" alt="Guest Bedroom">
+                    <div class="room-overlay">
+                        <h3>Guest Bedroom</h3>
+                        <p>Formal bedroom with custom lighting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <!-- Project 2 Modal -->
+<div class="project-modal" id="project2-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('project2-modal')">&times;</span>
+        <div class="modal-header">
+            <h2>Amit Agarwal Farm House</h2>
+            <p>Bengaluru | Farm House Interior Design</p>
+        </div>
+        
+        <div class="room-grid">
+            <div class="room-item">
+                <img src="port/Amit Agarwal farm house/Screenshot 2025-12-28 200802.png" class="room-img" alt="Living Area">
+                <div class="room-overlay">
+                    <h3>Living Area</h3>
+                    <p>Spacious living with rustic elements</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Amit Agarwal farm house/Screenshot 2025-12-28 200851.png" class="room-img" alt="Kitchen">
+                <div class="room-overlay">
+                    <h3>Kitchen</h3>
+                    <p>Rustic kitchen with modern amenities</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Amit Agarwal farm house/Screenshot 2025-12-28 200904.png" class="room-img" alt="Study Room">
+                <div class="room-overlay">
+                    <h3>Study Room</h3>
+                    <p>Cozy study with natural light</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Amit Agarwal farm house/Screenshot 2025-12-28 200931.png" class="room-img" alt="Outdoor Area">
+                <div class="room-overlay">
+                    <h3>Outdoor Area</h3>
+                    <p>Beautiful outdoor seating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div class="project-modal" id="project3-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('project3-modal')">&times;</span>
+        <div class="modal-header">
+            <h2>Girdharilal Jain Residence</h2>
+            <p>Bengaluru | Contemporary Interior Design</p>
+        </div>
+        
+        <div class="room-grid">
+            <div class="room-item">
+                <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201155.png" class="room-img" alt="Living Area">
+                <div class="room-overlay">
+                    <h3>Living Area</h3>
+                    <p>Elegant contemporary design</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201239.png" class="room-img" alt="Kitchen">
+                <div class="room-overlay">
+                    <h3>Kitchen</h3>
+                    <p>Modern kitchen with smart storage</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201316.png" class="room-img" alt="Master Bedroom">
+                <div class="room-overlay">
+                    <h3>Master Bedroom</h3>
+                    <p>Luxurious master suite</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201345.png" class="room-img" alt="Balcony">
+                <div class="room-overlay">
+                    <h3>Balcony</h3>
+                    <p>Private outdoor space</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4 Modal -->
+<div class="project-modal" id="project4-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('project4-modal')">&times;</span>
+        <div class="modal-header">
+            <h2>Girish Gowda Residence</h2>
+            <p>Bengaluru | Modern Apartment Design</p>
+        </div>
+        
+        <div class="room-grid">
+            <div class="room-item">
+                <img src="portf/Girish Gowda/living area/Enscape_2025-08-13-03-00-20.jpg" class="room-img" alt="Living Room">
+                <div class="room-overlay">
+                    <h3>Living Room</h3>
+                    <p>Modern design with clean lines</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Girish Gowda/kitchen/Enscape_2025-08-10-17-58-43.jpg" class="room-img" alt="Dining Area">
+                <div class="room-overlay">
+                    <h3>Dining Area</h3>
+                    <p>Elegant dining space</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Girish Gowda/master bedroom/Enscape_2025-08-12-15-44-56.jpg" class="room-img" alt="Bedroom">
+                <div class="room-overlay">
+                    <h3>Bedroom</h3>
+                    <p>Comfortable and stylish bedroom</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Girish Gowda/bedroom 2/Enscape_2025-08-12-12-51-45.jpg" class="room-img" alt="Study">
+                <div class="room-overlay">
+                    <h3>Study</h3>
+                    <p>Productive workspace</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 5 Modal -->
+<div class="project-modal" id="project5-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('project5-modal')">&times;</span>
+        <div class="modal-header">
+            <h2>Karan Daas Residence</h2>
+            <p>Bengaluru | Luxury Apartment Design</p>
+        </div>
+        
+        <div class="room-grid">
+            <div class="room-item">
+                <img src="portf/Karan dass/Screenshot 2025-12-28 202105.png" class="room-img" alt="Living Room">
+                <div class="room-overlay">
+                    <h3>Living Room</h3>
+                    <p>Spacious and luxurious living area</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Karan dass/kitchen/7.png" class="room-img" alt="Kitchen">
+                <div class="room-overlay">
+                    <h3>Kitchen</h3>
+                    <p>Modern kitchen with premium finishes</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Karan dass/master bedroom/door side .png" class="room-img" alt="Master Bedroom">
+                <div class="room-overlay">
+                    <h3>Master Bedroom</h3>
+                    <p>Luxury master suite</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Karan dass/Guest bedroom/ChatGPT Image Dec 28, 2025, 08_50_12 PM.png" class="room-img" alt="Balcony">
+                <div class="room-overlay">
+                    <h3>Balcony</h3>
+                    <p>Beautiful outdoor space</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 6 Modal -->
+<div class="project-modal" id="project6-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('project6-modal')">&times;</span>
+        <div class="modal-header">
+            <h2>Rahal Sharma Residence</h2>
+            <p>Bengaluru | Contemporary Villa Design</p>
+        </div>
+        
+        <div class="room-grid">
+            <div class="room-item">
+                <img src="portf/Rahal Sharma/Screenshot 2025-12-28 202703.png" class="room-img" alt="Living Area">
+                <div class="room-overlay">
+                    <h3>Living Area</h3>
+                    <p>Elegant contemporary living space</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Rahal Sharma/kitchen/Screenshot 2025-12-28 202744.png" class="room-img" alt="Dining Room">
+                <div class="room-overlay">
+                    <h3>Dining Room</h3>
+                    <p>Formal dining area</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Rahal Sharma/master bedroom/Screenshot 2025-12-28 202851.png" class="room-img" alt="Bedroom">
+                <div class="room-overlay">
+                    <h3>Bedroom</h3>
+                    <p>Comfortable and stylish bedroom</p>
+                </div>
+            </div>
+            
+            <div class="room-item">
+                <img src="portf/Rahal Sharma/Kids bedroom/Screenshot 2025-12-28 202809.png" class="room-img" alt="Study">
+                <div class="room-overlay">
+                    <h3>Study</h3>
+                    <p>Productive home office</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919353684186" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '25px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+        
+        // Project Modal Functions
+        function openProject(projectId) {
+            document.getElementById(projectId + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('project-modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // FAQ Toggle Function
+        function toggleFAQ(faqNumber) {
+            const answer = document.getElementById('faq-answer-' + faqNumber);
+            const toggle = answer.previousElementSibling.querySelector('.faq-toggle');
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                toggle.textContent = '+';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer.active').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                });
+                
+                answer.classList.add('active');
+                toggle.textContent = '-';
+            }
+        }
+        
+        // Initialize with header scroll effect
+        if (window.scrollY > 100) {
+            header.style.padding = '15px 0';
+            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+        }
+
+        // Create floating particles for hero background
+        function createParticles() {
+            const heroSections = document.querySelectorAll('.hero-background');
+            
+            heroSections.forEach(section => {
+                // Create particles container
+                const particlesContainer = document.createElement('div');
+                particlesContainer.className = 'floating-particles';
+                section.appendChild(particlesContainer);
+                
+                // Create 30 particles
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Random position
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    const size = Math.random() * 3 + 1;
+                    const duration = Math.random() * 10 + 10;
+                    const delay = Math.random() * 5;
+                    
+                    particle.style.left = `${left}%`;
+                    particle.style.top = `${top}%`;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.animationDuration = `${duration}s`;
+                    particle.style.animationDelay = `${delay}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            });
+        }
+
+        // Call after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Update existing scroll effect initialization
+            if (window.scrollY > 100) {
+                const header = document.getElementById('header');
+                if (header) {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

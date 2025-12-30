@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Terms | LivinArinn Interiors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --beige: #f9f7f2;
+            --light-beige: #fdfcf9;
+            --charcoal: #1a1a1a;
+            --dark-charcoal: #0d0d0d;
+            --gold: #c5a572;
+            --light-gold: #e2d4bc;
+            --gray: #8c8c8c;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--charcoal);
+            border-color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            background-color: var(--white);
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: 2px;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            margin-left: 10px;
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 300;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* About Hero */
+        .about-hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            background-color: var(--beige);
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--gray);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-points {
+            margin-top: 40px;
+        }
+
+        .about-point {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .about-point:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--gold);
+        }
+
+        .about-point h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .about-point p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            position: relative;
+            height: 500px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Terms Section */
+        .terms-section {
+            background-color: var(--beige);
+            padding: 100px 0;
+        }
+
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .terms-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .terms-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .terms-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .terms-content {
+            background-color: var(--white);
+            padding: 60px;
+            box-shadow: var(--shadow);
+        }
+
+        .terms-category {
+            margin-bottom: 50px;
+        }
+
+        .terms-category h3 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gold);
+        }
+
+        .terms-list {
+            list-style: none;
+        }
+
+        .terms-list li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .terms-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .terms-note {
+            background-color: var(--light-beige);
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .terms-note p {
+            color: var(--charcoal);
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 100px 0 40px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 300;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 60px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .copyright p {
+            margin-bottom: 10px;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                padding: 100px 40px 40px;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .terms-content {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .about-content {
+                padding: 70px 0;
+            }
+            
+            .terms-section {
+                padding: 70px 0;
+            }
+            
+            .terms-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .terms-content {
+                padding: 30px 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+        /* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--gold);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text div {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 1.5px;
+    line-height: 1;
+}
+
+.logo-text span {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--gold);
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+/* Remove old logo styles from previous CSS */
+.logo {
+    /* Remove any existing logo styles that conflict */
+    display: flex;
+    align-items: center;
+}
+
+/* Update for mobile responsiveness */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-text div {
+        font-size: 1.5rem;
+    }
+    
+    .logo-text span {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-text div {
+        font-size: 1.3rem;
+    }
+    
+    .logo-text span {
+        display: none; /* Hide on very small screens */
+    }
+    
+    .logo-img {
+        margin-right: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+   <!-- Header -->
+<header id="header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <div class="logo-container">
+                <img src="logo.png" alt="LivinArinn Interiors Logo" class="logo-img">
+                <div class="logo-text">
+                    <div>LIVINARINN</div>
+                    <span>INTERIORS</span>
+                </div>
+            </div>
+        </a>
+        
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="portfolio-faq.html">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="about-terms.html" class="active">Terms</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-cta">
+            <a href="https://wa.me/919353684186" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About LivinArinn</h1>
+            <p>Premium interior design consultancy creating timeless spaces with craftsmanship and innovation</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section id="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>Our Design Philosophy</h2>
+                <p>At LivinArinn Interiors, we believe that exceptional spaces are born from the perfect harmony of visionary design, innovative technology, and meticulous craftsmanship. Each project is a collaborative journey where your aspirations meet our expertise.</p>
+                <p>Our award-winning designers work closely with each client, transforming concepts into stunning realities while respecting budgets and timelines. We pride ourselves on our sustainable approach, carefully selecting eco-friendly materials without compromising on style or quality.</p>
+                
+                <div class="about-points">
+                    <div class="about-point">
+                        <h4>Innovative Vision & Personal Attention</h4>
+                        <p>We collaborate closely with you to transform your unique vision into stunning, practical designs.</p>
+                    </div>
+                    
+                    <div class="about-point">
+                        <h4>Sustainable & Stylish</h4>
+                        <p>We select high-quality, eco-friendly materials to deliver beautiful interiors without compromising on durability.</p>
+                    </div>
+                    
+                    <div class="about-point">
+                        <h4>Seamless Project Experience</h4>
+                        <p>From consultation to installation, we manage every detail to ensure your project is flawless.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Design Philosophy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms-section">
+        <div class="container terms-container">
+            <div class="terms-header">
+                <h2>Terms & Conditions</h2>
+                <p>Please review our terms and conditions for wood work projects to ensure a smooth collaboration</p>
+            </div>
+            
+            <div class="terms-content">
+                <div class="terms-category">
+                    <h3>Project Terms & Conditions</h3>
+                    <ul class="terms-list">
+                        <li>This quotation is valid for 40 days, subject to changes in the prices of materials. Prices may vary when booked beyond this date.</li>
+                        <li>If the project does not enter production within 90 days after booking, the quoted prices may vary as per the current rate card.</li>
+                        <li>The quoted rates are estimates based on current designs and sizes. They are liable to change until the sign-off/production stage, depending on actual measurements on-site or any design/material changes made by you or as per your instructions.</li>
+                        <li>We promise to complete your project within 90 to 120 working days of receiving 60% of the quote value to start production, depending on the scale of the project. The project timeline will be affected by the non-receipt of respective payments, pending decisions, and additional line items/works.</li>
+                        <li>Any kind of civil works, painting, plumbing, core cutting, gas piping, and electrical works are at an additional cost and with advance payment. The exact value of the quote will depend on the site conditions.</li>
+                        <li>For booking an order with Livinarinn, customer quote value should include a minimum of INR 25,00,000 + tax of "woodwork".</li>
+                        <li>The design phase for a project will not extend beyond 60 days, which includes three design iterations.</li>
+                        <li>Design and drawings are the sole property of Livinarinn and will not be shared with any third party.</li>
+                        <li>If products are ready in the factory and for any reason attributable to the customer, we cannot dispatch them to the site, Livinarinn will charge load holding charges of INR 1100/day until the dispatch of products to the site.</li>
+                        <li>For any procurement done by Livinarinn on behalf of the client (such as hob, chimney, geysers, ACs, tiles, sink, and faucet), there will be an additional service charge of 20% by Livinarinn on the original product price.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Customer Responsibilities</h3>
+                    <ul class="terms-list">
+                        <li>Electricity connection shall be provided by the customer.</li>
+                        <li>Water connection shall be provided by customer.</li>
+                        <li>Approvals and permission from the builder.</li>
+                        <li>Any deposits to commence the works at site will be made by the owner.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Third-Party Vendors</h3>
+                    <ul class="terms-list">
+                        <li>No third-party vendor or contractor should be present or working at the site when the Livinarinn team is working.</li>
+                        <li>All services including electrical, kitchen plumbing, kitchen quartz, kitchen tiles, false ceiling, curtains and painting, etc. should only be executed by Livinarinn-approved vendors to ensure quality and on-time delivery.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Installation Check / Handover of Site</h3>
+                    <ul class="terms-list">
+                        <li>The final coat of paint should be done after completion of interior work. Any civil work, electrical work, or woodwork installation done on-site may result in unavoidable hand marks and scratches.</li>
+                        <li>Handover of the site is mandatory before any third-party vendor enters the site and should be done within 10 days after project completion.</li>
+                        <li>Post installation, the following set of services will be done at the site: Dusting, sweeping and mopping of all areas, Cleaning the insides of wooden cabinets.</li>
+                        <li>Deep cleaning with the use of mechanical equipment is out of scope.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Cancellation Policy</h3>
+                    <ul class="terms-list">
+                        <li>Any non-manufacturing defects and damages post-receipt of delivery are not valid for returns or replacements.</li>
+                        <li>Customized and made-to-order furniture purchased from Livinarinn cannot be returned or exchanged.</li>
+                        <li>All payments made at each stage are non-refundable.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Payment Terms for Woodworks</h3>
+                    <ul class="terms-list">
+                        <li>10% or Rs.2,00,000 (whichever is higher) - Booking amount to confirm your order and start the design process (non-refundable).</li>
+                        <li>30% - Pre material Selection (non-refundable).</li>
+                        <li>30% - Final design sign-off and pre-site marking (non-refundable).</li>
+                        <li>30% or remaining amount - Before materials are shipped to the site (non-refundable).</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Payment Terms for Services</h3>
+                    <ul class="terms-list">
+                        <li>100% - Service payment to start service work at site.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-category">
+                    <h3>Additional Terms for Design Services</h3>
+                    <ul class="terms-list">
+                        <li>40% advance of the grand total before work begins.</li>
+                        <li>30% after first design delivery.</li>
+                        <li>Final 30% upon completion & before release of final files.</li>
+                        <li>Deliverables: Final high-resolution images will be shared upon receipt of the final payment.</li>
+                        <li>First Draft: The initial submission will be a clay render to finalize the camera angle.</li>
+                        <li>References & Information: Please share your preferred reference images and complete the questionnaire sent by our team at the earliest to ensure a smooth and timely workflow.</li>
+                        <li>Revisions: Up to four (4) rounds of revisions are included. Any additional changes beyond this scope may attract extra charges.</li>
+                        <li>Design Consistency: Revisions should not alter the approved elevation concept or theme.</li>
+                        <li>Any changes after work has commenced will result in additional cost and time for rework.</li>
+                        <li>The colour of the laminate and render may differ due to digital images.</li>
+                        <li>The colour may differ due to lightings conditions.</li>
+                        <li>Size of the units may vary due to site conditions.</li>
+                        <li>If the client chooses only the 3D visualisation service, pricing will be ₹30 per sq.ft</li>
+                        <li>File Format: The final 3D renders and 2D drawings will be delivered in JPEG format, suitable for multiple usage purposes.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-note">
+                    <p>By proceeding with our services, you acknowledge that you have read, understood, and agree to these terms and conditions. For any clarifications, please contact us before proceeding with your project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">LIVINARINN</a>
+                    <p>Premium interior design consultancy creating timeless, functional spaces that reflect your unique vision.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="portfolio-faq.html">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="about-terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="index.html#services">Space Planning</a></li>
+                        <li><a href="index.html#services">2D/3D Design</a></li>
+                        <li><a href="index.html#services">Material Selection</a></li>
+                        <li><a href="index.html#services">Site Execution</a></li>
+                        <li><a href="index.html#services">Complete Interiors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-user" style="margin-right: 10px; color: var(--gold);"></i> RS Sathvik</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> livinarinn@gmail.com</li>
+                    </ul>
+                    <a href="https://wa.me/919353684186" class="btn btn-gold" style="margin-top: 20px; width: 100%;" target="_blank"><i class="fab fa-whatsapp"></i> Start a Project</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 LivinArinn Interiors. All rights reserved.</p>
+                <p>Crafted with excellence by TATE LAVISH</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919353684186" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '25px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+        
+        // Initialize with header scroll effect
+        if (window.scrollY > 100) {
+            header.style.padding = '15px 0';
+            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+        }
+    </script>
+</body>
+</html>
