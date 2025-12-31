@@ -247,7 +247,6 @@
         }
 
         /* ============ HERO BACKGROUND ============ */
-        /* Hero Background with Transparency - FIXED IMAGE URLS */
         .hero-background {
             position: absolute;
             top: 0;
@@ -271,46 +270,14 @@
             z-index: 2;
         }
 
-        /* Fixed image URLs - using working Unsplash URLs */
-        .hero-image-transparent {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            opacity: 0.1;
-            z-index: 1;
-            filter: blur(0.5px);
-            animation: backgroundPan 30s infinite alternate ease-in-out;
-        }
-
-        /* Fallback gradient if image fails to load */
-        .hero-image-transparent:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%);
-            z-index: -1;
-        }
-
         @keyframes backgroundPan {
             0% {
-                background-position: center 30%;
                 transform: scale(1);
             }
             50% {
-                background-position: center 50%;
                 transform: scale(1.02);
             }
             100% {
-                background-position: center 70%;
                 transform: scale(1);
             }
         }
@@ -336,26 +303,29 @@
             padding-bottom: 100px;
             text-align: center;
             overflow: hidden;
+            background-color: var(--beige);
         }
 
         .portfolio-hero h1 {
             position: relative;
             z-index: 3;
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 20px;
             color: var(--charcoal);
             animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .portfolio-hero p {
             position: relative;
             z-index: 3;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
             max-width: 800px;
             margin: 0 auto;
             font-weight: 300;
             animation: fadeInUp 1s ease-out 0.2s both;
+            line-height: 1.8;
         }
 
         @keyframes fadeInUp {
@@ -396,7 +366,7 @@
         }
 
         .portfolio-header h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--charcoal);
             margin-bottom: 20px;
             position: relative;
@@ -417,10 +387,11 @@
 
         .portfolio-header p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
             font-weight: 300;
+            line-height: 1.8;
         }
 
         /* ============ FOLDER GRID ============ */
@@ -728,7 +699,7 @@
         }
 
         .faq-header h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--charcoal);
             margin-bottom: 20px;
             position: relative;
@@ -749,10 +720,11 @@
 
         .faq-header p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
             font-weight: 300;
+            line-height: 1.8;
         }
 
         .faq-container {
@@ -1069,12 +1041,7 @@
             }
             
             .portfolio-hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-image-transparent {
-                background-attachment: scroll;
-                animation: none;
+                font-size: 3.5rem;
             }
             
             .modal-content {
@@ -1099,7 +1066,7 @@
             }
             
             .portfolio-header h2, .faq-header h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .folder-grid {
@@ -1131,10 +1098,6 @@
                 font-size: 0.6rem;
                 letter-spacing: 2px;
             }
-            
-            .hero-image-transparent {
-                opacity: 0.08;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1143,7 +1106,7 @@
             }
             
             .portfolio-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .portfolio-hero p {
@@ -1189,10 +1152,6 @@
                 margin-right: 10px;
             }
             
-            .hero-image-transparent {
-                opacity: 0.05;
-            }
-            
             .faq-question {
                 padding: 20px;
             }
@@ -1204,11 +1163,11 @@
 
         @media (max-width: 400px) {
             .portfolio-hero h1 {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
             
             .portfolio-header h2, .faq-header h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .folder-icon {
@@ -1223,35 +1182,6 @@
             .folder-icon h3 {
                 font-size: 1.5rem;
             }
-        }
-
-        /* ============ IMAGE FALLBACKS ============ */
-        /* If images don't load, these fallbacks will show */
-        .no-image-fallback {
-            position: relative;
-        }
-        
-        .no-image-fallback:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--beige) 0%, var(--light-gold) 100%);
-            z-index: 1;
-        }
-        
-        .no-image-fallback:after {
-            content: '🏠';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: var(--gold);
-            z-index: 2;
-            opacity: 0.5;
         }
     </style>
 </head>
@@ -1293,11 +1223,24 @@
 <section class="portfolio-hero">
     <div class="hero-background">
         <div class="hero-overlay"></div>
-        <div class="hero-image-transparent portfolio-hero-bg"></div>
+        <!-- Background image added directly in HTML -->
+        <img src="living2.png" alt="Background" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.72;
+            filter: blur(0.3px);
+            z-index: 1;
+            animation: backgroundPan 30s infinite alternate ease-in-out;
+        ">
     </div>
     <div class="container">
-        <h1>Our Portfolio</h1>
-        <p>Explore our collection of transformative interior design projects that showcase our craftsmanship and attention to detail</p>
+        <h1>Design Gallery: Curated Transformations</h1>
+        <p>Immerse yourself in our signature portfolio showcasing bespoke interior narratives that blend timeless elegance with contemporary sophistication. Each project represents a unique dialogue between space, function, and personal expression.</p>
     </div>
 </section>
 
@@ -1305,8 +1248,8 @@
 <section class="portfolio-section" id="portfolio">
     <div class="container">
         <div class="portfolio-header">
-            <h2>Featured Projects</h2>
-            <p>Browse through our diverse portfolio of residential and commercial interior designs</p>
+            <h2>Signature Collection</h2>
+            <p>A curated selection of transformative residential projects where visionary concepts become tangible realities, each telling its own story of refined living and architectural harmony.</p>
         </div>
         
         <div class="folder-grid">
@@ -1371,8 +1314,8 @@
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="faq-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our interior design services and process</p>
+                <h2>Design Dialogue: Your Questions Answered</h2>
+                <p>Navigate through our comprehensive guide addressing the most common inquiries about our design philosophy, process, and what to expect when creating your ideal living space.</p>
             </div>
             
             <div class="faq-container">
@@ -1577,7 +1520,6 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-user" style="margin-right: 10px; color: var(--gold);"></i> RS Sathvik</li>
                         <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
                         <li><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
                         <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> livinarinn@gmail.com</li>
@@ -1660,8 +1602,8 @@
             <div class="room-item">
                 <img src="port/Amit Agarwal farm house/Screenshot 2025-12-28 200851.png" class="room-img" alt="Kitchen">
                 <div class="room-overlay">
-                    <h3>Kitchen</h3>
-                    <p>Rustic kitchen with modern amenities</p>
+                    <h3>A Retro Styled Living Space </h3>
+                    <p>Rustic Living Area with modern amenities</p>
                 </div>
             </div>
             
@@ -1705,24 +1647,24 @@
             <div class="room-item">
                 <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201239.png" class="room-img" alt="Kitchen">
                 <div class="room-overlay">
-                    <h3>Kitchen</h3>
-                    <p>Modern kitchen with smart storage</p>
+                    <h3>A Entertainment Area</h3>
+                    <p>Modern Space for Enjoyment</p>
                 </div>
             </div>
             
             <div class="room-item">
                 <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201316.png" class="room-img" alt="Master Bedroom">
                 <div class="room-overlay">
-                    <h3>Master Bedroom</h3>
-                    <p>Luxurious master suite</p>
+                    <h3>Cool Living Space</h3>
+                    <p>Luxurious Living suite</p>
                 </div>
             </div>
             
             <div class="room-item">
                 <img src="port/Girdharilal Jain/Screenshot 2025-12-28 201345.png" class="room-img" alt="Balcony">
                 <div class="room-overlay">
-                    <h3>Balcony</h3>
-                    <p>Private outdoor space</p>
+                    <h3>Master Bed Room</h3>
+                    <p>Comfortable and stylish bedroom</p>
                 </div>
             </div>
         </div>
@@ -1750,15 +1692,15 @@
             <div class="room-item">
                 <img src="portf/Girish Gowda/kitchen/Enscape_2025-08-10-17-58-43.jpg" class="room-img" alt="Dining Area">
                 <div class="room-overlay">
-                    <h3>Dining Area</h3>
-                    <p>Elegant dining space</p>
+                    <h3>Stylish Kitchen</h3>
+                    <p>Elegant Kitchen space</p>
                 </div>
             </div>
             
             <div class="room-item">
                 <img src="portf/Girish Gowda/master bedroom/Enscape_2025-08-12-15-44-56.jpg" class="room-img" alt="Bedroom">
                 <div class="room-overlay">
-                    <h3>Bedroom</h3>
+                    <h3>Master Bedroom</h3>
                     <p>Comfortable and stylish bedroom</p>
                 </div>
             </div>
@@ -1766,7 +1708,7 @@
             <div class="room-item">
                 <img src="portf/Girish Gowda/bedroom 2/Enscape_2025-08-12-12-51-45.jpg" class="room-img" alt="Study">
                 <div class="room-overlay">
-                    <h3>Study</h3>
+                    <h3>A Bed Room</h3>
                     <p>Productive workspace</p>
                 </div>
             </div>
@@ -1811,8 +1753,8 @@
             <div class="room-item">
                 <img src="portf/Karan dass/Guest bedroom/ChatGPT Image Dec 28, 2025, 08_50_12 PM.png" class="room-img" alt="Balcony">
                 <div class="room-overlay">
-                    <h3>Balcony</h3>
-                    <p>Beautiful outdoor space</p>
+                    <h3>Guest Bed Room</h3>
+                    <p>Beautiful Guest Room</p>
                 </div>
             </div>
         </div>
@@ -1840,15 +1782,15 @@
             <div class="room-item">
                 <img src="portf/Rahal Sharma/kitchen/Screenshot 2025-12-28 202744.png" class="room-img" alt="Dining Room">
                 <div class="room-overlay">
-                    <h3>Dining Room</h3>
-                    <p>Formal dining area</p>
+                    <h3>Kitchen</h3>
+                    <p>Formal Cooking area</p>
                 </div>
             </div>
             
             <div class="room-item">
                 <img src="portf/Rahal Sharma/master bedroom/Screenshot 2025-12-28 202851.png" class="room-img" alt="Bedroom">
                 <div class="room-overlay">
-                    <h3>Bedroom</h3>
+                    <h3>Master Bedroom</h3>
                     <p>Comfortable and stylish bedroom</p>
                 </div>
             </div>
@@ -1856,8 +1798,8 @@
             <div class="room-item">
                 <img src="portf/Rahal Sharma/Kids bedroom/Screenshot 2025-12-28 202809.png" class="room-img" alt="Study">
                 <div class="room-overlay">
-                    <h3>Study</h3>
-                    <p>Productive home office</p>
+                    <h3>Kids Bed Room</h3>
+                    <p>Modern Kids Room</p>
                 </div>
             </div>
         </div>
@@ -1946,54 +1888,6 @@
             header.style.padding = '15px 0';
             header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
         }
-
-        // Create floating particles for hero background
-        function createParticles() {
-            const heroSections = document.querySelectorAll('.hero-background');
-            
-            heroSections.forEach(section => {
-                // Create particles container
-                const particlesContainer = document.createElement('div');
-                particlesContainer.className = 'floating-particles';
-                section.appendChild(particlesContainer);
-                
-                // Create 30 particles
-                for (let i = 0; i < 30; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    
-                    // Random position
-                    const left = Math.random() * 100;
-                    const top = Math.random() * 100;
-                    const size = Math.random() * 3 + 1;
-                    const duration = Math.random() * 10 + 10;
-                    const delay = Math.random() * 5;
-                    
-                    particle.style.left = `${left}%`;
-                    particle.style.top = `${top}%`;
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particle.style.animationDuration = `${duration}s`;
-                    particle.style.animationDelay = `${delay}s`;
-                    
-                    particlesContainer.appendChild(particle);
-                }
-            });
-        }
-
-        // Call after DOM loads
-        document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            
-            // Update existing scroll effect initialization
-            if (window.scrollY > 100) {
-                const header = document.getElementById('header');
-                if (header) {
-                    header.style.padding = '15px 0';
-                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-                }
-            }
-        });
     </script>
 </body>
 </html>
