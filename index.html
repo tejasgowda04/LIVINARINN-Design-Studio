@@ -208,7 +208,7 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            min-width: 0; /* Allows text to shrink properly */
+            min-width: 0;
         }
 
         .logo-text div {
@@ -293,7 +293,6 @@
         }
 
         /* ============ HERO BACKGROUND ============ */
-        /* Hero Background with Transparency - FIXED */
         .hero-background {
             position: absolute;
             top: 0;
@@ -317,33 +316,20 @@
             z-index: 2;
         }
 
-        /* Fixed image URL with fallback */
+        /* Removed background-image from CSS */
         .hero-image-transparent {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            opacity: 0.15; /* Reduced opacity for better visibility */
+            opacity: 0.15;
             z-index: 1;
             filter: blur(0.5px);
             animation: backgroundPan 30s infinite alternate ease-in-out;
-        }
-
-        /* Fallback if image doesn't load */
-        .hero-image-transparent:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%);
-            z-index: -1;
         }
 
         @keyframes backgroundPan {
@@ -359,20 +345,6 @@
                 background-position: center 70%;
                 transform: scale(1);
             }
-        }
-
-        /* Add subtle pattern overlay for more texture */
-        .hero-background:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 25% 25%, rgba(197, 165, 114, 0.03) 0%, transparent 55%),
-                            radial-gradient(circle at 75% 75%, rgba(197, 165, 114, 0.03) 0%, transparent 55%);
-            z-index: 2;
-            pointer-events: none;
         }
 
         /* ============ HERO SECTION ============ */
@@ -434,7 +406,7 @@
             }
         }
 
-        /* Decorative elements */
+        /* Hero features */
         .hero-features {
             display: flex;
             justify-content: center;
@@ -1092,7 +1064,6 @@
                 animation: none;
             }
             
-            /* Logo adjustments for tablet */
             .logo-text div {
                 font-size: 1.5rem;
             }
@@ -1143,7 +1114,6 @@
                 opacity: 0.1;
             }
             
-            /* Logo adjustments for mobile */
             .logo-text div {
                 font-size: 1.3rem;
             }
@@ -1151,7 +1121,7 @@
             .logo-text span {
                 font-size: 0.55rem;
                 letter-spacing: 1.5px;
-                display: block; /* Always show on mobile */
+                display: block;
             }
             
             .logo-img {
@@ -1209,7 +1179,6 @@
                 font-size: 2rem;
             }
             
-            /* Logo adjustments for small mobile */
             .logo-text div {
                 font-size: 1.1rem;
                 letter-spacing: 1px;
@@ -1272,7 +1241,6 @@
                 order: 1;
             }
             
-            /* Ensure logo text doesn't get cut off */
             .logo-text div,
             .logo-text span {
                 overflow: visible;
@@ -1282,7 +1250,6 @@
             }
         }
 
-        /* ============ FIX FOR LOGO ON EXTRA SMALL SCREENS ============ */
         @media (max-width: 350px) {
             .logo-container {
                 flex-direction: column;
@@ -1354,7 +1321,19 @@
 <section class="hero" id="home">
     <div class="hero-background">
         <div class="hero-overlay"></div>
-        <div class="hero-image-transparent"></div>
+        <!-- Background image added directly in HTML -->
+        <img src="living.jpg" alt="Background" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+            filter: blur(0.5px);
+            z-index: 1;
+            animation: backgroundPan 30s infinite alternate ease-in-out;
+        ">
     </div>
     <div class="container">
         <div class="hero-container">
@@ -1367,33 +1346,31 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
         
-        <!-- Optional: You can add a decorative element instead of an image -->
-        <div style="margin-top: 60px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-            <div style="text-align: center; padding: 20px; max-width: 200px;">
-                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+        <!-- Hero Features -->
+        <div class="hero-features">
+            <div class="hero-feature fade-in">
+                <div class="hero-feature-icon">
                     <i class="fas fa-palette"></i>
                 </div>
-                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Creative Designs</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Unique & innovative concepts</p>
+                <h4>Creative Designs</h4>
+                <p>Unique & innovative concepts</p>
             </div>
             
-            <div style="text-align: center; padding: 20px; max-width: 200px;">
-                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+            <div class="hero-feature fade-in">
+                <div class="hero-feature-icon">
                     <i class="fas fa-handshake"></i>
                 </div>
-                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Personal Attention</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Dedicated to your vision</p>
+                <h4>Personal Attention</h4>
+                <p>Dedicated to your vision</p>
             </div>
             
-            <div style="text-align: center; padding: 20px; max-width: 200px;">
-                <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 10px;">
+            <div class="hero-feature fade-in">
+                <div class="hero-feature-icon">
                     <i class="fas fa-star"></i>
                 </div>
-                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 8px;">Premium Quality</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Exceptional craftsmanship</p>
+                <h4>Premium Quality</h4>
+                <p>Exceptional craftsmanship</p>
             </div>
         </div>
     </div>
@@ -1489,7 +1466,7 @@
                 </div>
             </div>
             <div class="about-image fade-in">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" alt="About LivinArinn Interiors">
+                <img src="portf/Girish Gowda/living area/Enscape_2025-08-13-03-00-20.jpg">
             </div>
         </div>
     </section>
@@ -1614,15 +1591,6 @@
                 <p>Connect with us to discuss your vision and start transforming your space into a reflection of your unique style and personality. Our team is ready to guide you through every step of the design process.</p>
                 
                 <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <h4>Owner</h4>
-                            <p>RS Sathvik</p>
-                        </div>
-                    </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1673,6 +1641,10 @@
                     
                     <div class="form-group">
                         <input type="email" id="email" class="form-control" placeholder="Email Address">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="city" id="city" class="form-control" placeholder="City/Town">
                     </div>
                     
                     <div class="form-group">
@@ -1738,7 +1710,6 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-user" style="margin-right: 10px; color: var(--gold);"></i> RS Sathvik</li>
                         <li><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
                         <li><i class="fab fa-whatsapp" style="margin-right: 10px; color: var(--gold);"></i> +91-9353684186</li>
                         <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> livinarinn@gmail.com</li>
@@ -1815,10 +1786,11 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
+            const city = document.getElementById('city').value;
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value;
             
-            const whatsappMessage = `*New Interior Design Enquiry - LivinArinn Interiors*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Service Interest:* ${service}%0A*Message:* ${message}%0A%0AHi, I am interested in your interior design services. Please contact me.`;
+            const whatsappMessage = `*New Interior Design Enquiry - LivinArinn Interiors*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*City:* ${city}%0A*Service Interest:* ${service}%0A*Message:* ${message}%0A%0AHi, I am interested in your interior design services. Please contact me.`;
             
             const whatsappURL = `https://wa.me/919353684186?text=${whatsappMessage}`;
             
